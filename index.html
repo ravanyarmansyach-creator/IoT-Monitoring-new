@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IoT Dashboard ESP32</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>IoT Dashboard ESP32</h1>
+
+  <div class="controls">
+    <button onclick="control('start')">Start</button>
+    <button onclick="control('stop')">Stop</button>
+    <label>
+      Refresh Interval (ms): 
+      <input type="number" id="intervalInput" value="5000">
+      <button onclick="setIntervalTime()">Set</button>
+    </label>
+  </div>
+
+  <h2>Data Table</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Suhu (°C)</th>
+        <th>Humidity (%)</th>
+        <th>Lux</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="dataTable"></tbody>
+  </table>
+
+  <h2>Grafik Suhu</h2>
+  <canvas id="tempChart" width="600" height="300"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
